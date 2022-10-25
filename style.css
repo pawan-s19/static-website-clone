@@ -1,0 +1,262 @@
+@font-face {
+  font-family: "soehne-schmal";
+  src: url("/fonts/soehne-schmal-web-fett-kursiv.c0115879.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "soehne-halbfett";
+  src: url("/fonts/soehne-web-halbfett.f7dddd91.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "soehne-leicht";
+  src: url("fonts/soehne-web-leicht.942ceda1.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+#main {
+  position: relative;
+  cursor: default;
+}
+.page1 {
+  height: 100vh;
+  width: 100vw;
+  background-color: #fffdf2;
+  position: relative;
+}
+.page1 {
+  padding: 0 20px;
+}
+.page {
+  position: relative;
+}
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 7em;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 3em;
+}
+.nav > h1 {
+  font-family: soehne-schmal;
+  font-size: 3vw;
+}
+.nav .right {
+  display: flex;
+  align-items: center;
+  font-family: soehne-halbfett;
+}
+
+.nav .right h3 {
+  margin-left: 3em;
+  font-size: 1.8vw;
+}
+.mover {
+  height: 70vh;
+  width: 100%;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -40%);
+  display: flex;
+  justify-content: center;
+}
+
+.animator {
+  width: 97%;
+  height: 100vh;
+  position: relative;
+}
+.animator .text {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  margin-bottom: 5vh;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+.animator .text h1 {
+  font-size: 18vw;
+  font-family: soehne-halbfett;
+  font-weight: 1000;
+  white-space: nowrap;
+  letter-spacing: -1.2vw;
+}
+.animator .text h1 span {
+  transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.6s;
+}
+.animator .curved1 {
+  width: 50%;
+  height: 7.5vh;
+  background-color: #fcec62;
+  border-top-left-radius: 20px;
+
+  position: relative;
+}
+.animator .curved1::after {
+  content: "";
+  width: 0%;
+  background-color: #fcec62;
+  animation: anime 1s cubic-bezier(0.19, 1, 0.22, 1) 1s both;
+  height: 7.5vh;
+  position: absolute;
+  left: 100%;
+
+  border-top-right-radius: 20px;
+  top: 0;
+}
+.animator .curved1::before {
+  content: "";
+  width: 100%;
+  background-color: white;
+  animation: anime2 1s cubic-bezier(0.19, 1, 0.22, 1) 1s both;
+  height: 7.5vh;
+  position: absolute;
+  left: 0%;
+  border-top-left-radius: 20px;
+  top: 0;
+}
+.animator .curved2 {
+  width: 50%;
+  height: 7.5vh;
+  background-color: #fcec62;
+  border-bottom-left-radius: 20px;
+  position: relative;
+}
+.animator .curved2::before {
+  content: "";
+  width: 100%;
+  height: 7.5vh;
+  background-color: white;
+  position: absolute;
+  border-bottom-left-radius: 20px;
+  animation: anime2 1s cubic-bezier(0.19, 1, 0.22, 1) 1s both;
+}
+.animator .curved2::after {
+  content: "";
+  width: 0%;
+  height: 7.5vh;
+  background-color: #fcec62;
+  position: absolute;
+  left: 100%;
+  border-bottom-right-radius: 20px;
+  animation: anime 1s cubic-bezier(0.19, 1, 0.22, 1) 1s both;
+}
+
+@keyframes anime {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes anime2 {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+.secnav {
+  padding: 0px 3vw;
+  display: flex;
+  justify-content: space-between;
+  font-family: soehne-leicht;
+  font-size: 1.3em;
+  margin-bottom: 20vh;
+}
+.secnav h2:nth-child(1) {
+  display: flex;
+  align-items: center;
+  font-family: soehne-halbfett;
+  color: #eb4471;
+}
+.secnav .gol {
+  height: 0.5em;
+  width: 0.5em;
+  background-color: #eb4471;
+  border-radius: 50%;
+}
+.shower {
+  width: 100%;
+}
+.shower .black {
+  width: 100%;
+  background-color: black;
+  padding: 9vh 5vw;
+
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
+  color: #fffdf2;
+}
+.shower .shower-grid h1 {
+  font-size: 17vw;
+  font-family: soehne-halbfett;
+  font-size: 1000;
+}
+.shower .shower-grid {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  margin-bottom: 3em;
+}
+.shower .shower-grid .card {
+  height: 70vh;
+  width: 36vw;
+  background-color: #505867;
+  border-radius: 2em;
+  overflow: hidden;
+  position: relative;
+}
+.card .overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+.shower-grid .img {
+  height: 85%;
+
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+  position: relative;
+  overflow: hidden;
+}
+.shower-grid .img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  transform: translate(0, 100%);
+}
+.shower-grid h2 {
+  font-family: soehne-schmal;
+  font-size: 7.5vh;
+  margin-left: 0.5em;
+}
+.space {
+  padding-left: 14em;
+}
